@@ -1,0 +1,39 @@
+{
+  "name": "tauri-template-for-vscode-devcontainer",
+  "build": {
+    "dockerfile": "../Dockerfile"
+  },
+  "init": true,
+  "features": {
+    "ghcr.io/devcontainers/features/desktop-lite:1": {
+      "version": "latest",
+      "noVncVersion": "1.2.0",
+      "password": "vscode",
+      "webPort": "6080",
+      "vncPort": "5901"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/rust:1": {
+      "version": "1.70",
+      "profile": "minimal"
+    }
+  },
+  "forwardPorts": [6080],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "PulkitGangwar.nextjs-snippets",
+        "streetsidesoftware.code-spell-checker",
+        "ionutvmi.path-autocomplete",
+        "formulahendry.auto-rename-tag",
+        "esbenp.prettier-vscode",
+        "tauri-apps.tauri-vscode",
+        "rust-lang.rust-analyzer"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}
